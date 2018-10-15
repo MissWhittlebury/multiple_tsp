@@ -21,16 +21,21 @@ While the algorithm works it still struggles for consistency, and optimization a
 
 ## Arguments and Sample Calls
 <br>
+
 * -f FILENAME, Name of the file that includes all delivery locations. Columns must be in the following order: name, address, latitude, longitude. The address column does not need to be populated. The first row of the file needs to be a header.
 * -k KEY, The key to be used for the Bing Maps Distance Matrix API requests.
 * -om OUTPUTMATRIX, Filename for the distance matrix csv.
 * -m MATRIX, Filename of a previously created distance matrix. This argument can be used to run just the solver portion of the script without wasting API requests.
 * -r RESULT, Filename for the best route created by the genetic algorithm.
+
 <br>
 <br>
 Sample Calls:
+<br>
+
 * python main.py -f Location_Coords.csv -k this_is_your_bing_api_key -om Distance_Matrix.csv -r Best_Route.csv
 * python main.py -m Distance_Matrix.csv -r Best_Route.csv
+
 <br>
 <br>
 Note: Every call must have either the -f, -k, -om combination of arguments or just the -m argument.
@@ -41,6 +46,7 @@ Note: Every call must have either the -f, -k, -om combination of arguments or ju
 
 ## Future Improvements/Updates
 <br>
+
 * Unit tests
 * Add ability to make batch API calls to get the distance from a Location to all destinations.
 * Improve the mating pool selection because it too heavily weights higher ranked routes even if they are only slightly better than the worst routes. This increases the risk of ending at a local optimum. The parent_selection function could also be revisted to limit convergence on a local optimum.
@@ -48,6 +54,7 @@ Note: Every call must have either the -f, -k, -om combination of arguments or ju
 * Single truck and greater than two truck solution testing
 * Allow option to run the routes without starting and ending at origin. This could be nice if you want to optimize 3 circles (ex. multiple bar crawls)
 * Allow option to require each truck to make the same number of stops
+
 <br>
 <br>
 <br>
