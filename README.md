@@ -60,4 +60,4 @@ Note: Every call must have either the -f, -k, -om combination of arguments or ju
 <br>
 <br>
 
-### Changelog
+### Change Log
